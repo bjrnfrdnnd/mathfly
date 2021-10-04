@@ -23,7 +23,7 @@ push math:
     key(end)
     key(end)
     insert("   ") 
-    key(ctrl-m)
+    key(cmd-m)
 
 state define <phrase>:
     insert("Definition - ")
@@ -66,7 +66,7 @@ state solution: "Soln: "
 # "n^th" 
 ordinal <user.letter>:
     insert(' ')
-    key(ctrl-m)
+    key(cmd-m)
     insert('{letter}^th   ')
     key(space) 
 
@@ -74,19 +74,19 @@ state where: " where "
 # math text letter in the middle of normal text
 mark <user.letter>:
     insert(' ')
-    key(ctrl-m)
+    key(cmd-m)
     insert('{letter}  ')
     key(space)
 #math text capital letter in the middle of normal text
 matrix <user.letter>:
     insert("  ")
-    key(ctrl-m)
+    key(cmd-m)
     insert(user.formatted_text(letter, "ALL_CAPS"))
     edit.right()
     insert("  ")
 #calligraphic letter in the middle of normal text
 relation <user.letter>:
-    key(ctrl-m)
+    key(cmd-m)
     insert('\mathcal ')
     user.insert_formatted(letter,"ALL_CAPS")
     edit.right()
@@ -94,7 +94,7 @@ relation <user.letter>:
 #calligraphic letter in the middle of normal text
 space relation <user.letter>:
     insert(' ')
-    key(ctrl-m)
+    key(cmd-m)
     insert('\mathcal ')
     user.insert_formatted(letter,"ALL_CAPS")
     edit.right()

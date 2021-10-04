@@ -61,7 +61,7 @@ bold mode:
 #Commands useful for taking notes in linear algebra
 one to one: " 1-1 " 
 homogenous system:
-  key(ctrl-m)
+  key(cmd-m)
   insert("A")
   key(alt-m v)
   insert("x")
@@ -72,7 +72,7 @@ homogenous system:
   edit.right()
   edit.right()
 linear system:
-  key(ctrl-m)
+  key(cmd-m)
   insert("A")
   key(alt-m v)
   insert("x")
@@ -84,12 +84,12 @@ linear system:
   edit.right()
 math transformation:
   insert(' ')
-  key(ctrl-m)
+  key(cmd-m)
   insert("T:\\mathbb R ^n \\longrightarrow \\mathbb R ^m   ")
   
 #e.g. "m x n matrix"
 <user.letter> by <user.letter>:
-    key(ctrl-m)
+    key(cmd-m)
     insert(letter_1)
     insert("\\times ")
     insert(letter_2)
