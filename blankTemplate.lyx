@@ -11,7 +11,7 @@
 \newcommand{\hmwkNumber}{} % Assignment number
 
 % Constants to set once
-\newcommand{\hmwkAuthorName}{Bjórn Nadrowski} % Your name
+\newcommand{\hmwkAuthorName}{Björn Nadrowski} % Your name
 \newcommand{\hmwkUserID}{} % User ID
 \newcommand{\hmwkStudentNumber}{} % Student number
 
