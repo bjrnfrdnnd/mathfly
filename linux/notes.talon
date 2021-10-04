@@ -1,4 +1,4 @@
-
+os: linux
 app: lyx
 -
 push dot:

@@ -1,3 +1,4 @@
+os: linux
 app: lyx
 -
 #commands and symbols for matrix operations

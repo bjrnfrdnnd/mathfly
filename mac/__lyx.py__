@@ -1,0 +1,248 @@
+# from https://medium.com/hubabl/math-by-voice-mac-d5650bb37b64
+# to show mac shortcuts
+
+from talon.voice import Context, Key, Rep, RepPhrase, Str, press
+from talon import ctrl
+
+context = Context("lyx", bundle="org.lyx.lyx")
+
+
+def insert(s):
+    Str(s)(None)
+
+
+def graphTemp(m):
+    press('cmd-l')
+    insert('\\begin{tikzpicture}')
+    press('enter')
+    press('tab')
+    insert(
+        '\\begin{axis} [ymin = -10, ymax=10, xlabel=$x$, ylabel=$f(x)$, width = 12cm, grid=major, axis on top=true, axis x line=middle, axis y line=middle, legend pos=outer north east]')
+    press('enter')
+    press('tab')
+    insert('\\addplot[blue, line width = 1, smooth, domain=-10:10]{formula};')
+    press('enter')
+    press('tab')
+    insert('\\end{axis}')
+    press('enter')
+    insert('\\end{tikzpicture}')
+
+
+context.keymap({
+    #####                                                                                                         #####
+    ### #p = personal command, you must add these shortcuts to LyX shortcuts in order to use these commands ###
+    #####                                                                                                         #####
+
+    'licks': 'Lyx',
+
+    # Buffer
+    'new': Key('cmd-n'),
+    'open': Key('cmd-o'),
+    'save': Key('cmd-s'),
+    'save as': Key('shift-cmd-s'),
+    'save all': Key('alt-cmd-s'),
+    # 'next': Key('ctrl-tab'),
+    # 'previous': Key('ctrl-shift-tab'),
+    '(show all tabs | show tabs | all tabs)': Key('shift-cmd-\\'),
+    'close': Key('cmd-w'),
+    'close folder': Key('cmd-k f'),
+    'close window': Key('shift-cmd-w'),
+    '(view pdf | update)': Key('cmd-t'),
+
+    # Navigation
+    'save bookmark 1': Key('ctrl-cmd-1'),
+    'go to bookmark 1': Key('cmd-1'),
+    'go to last bookmark': Key('cmd-<'),
+    'raise': Key('shift-6'),
+    'lower': Key('shift--'),
+
+    # Editing
+    # 'copy': Key('cmd-c'),
+    # 'paste': Key('cmd-v'),
+    'paste special (text | pt)': Key('shift-cmd-v'),
+    'paste special (sellection | sell)': Key('ctrl-cmd-v'),
+    # 'cut': Key('cmd-x'),
+    'undo': Key('cmd-z'),
+    'redo': Key('shift-cmd-z'),
+    'select inset': Key('cmd-a'),
+    'select all': Key('ctrl-cmd-a'),
+    'find and replace advanced': Key('shift-cmd-f'),
+    '(emojis | emojis and symbols)': Key('ctrl-cmd-space'),
+    'spellcheck': Key('shift-cmd-;'),
+
+    # Formatting
+    # modes
+    'insert tex code': Key('cmd-l'),
+    'insert table': Key('ctrl-alt-t'),  # p system preferences
+    'math mode': Key('cmd-m'),
+    'unfold in-line math': Key('shift-cmd-*'),
+    # environments
+    '(bullets | bulleted list)': Key('ctrl-p b'),
+    'list': Key('ctrl-p l'),
+    '(description | enviro description)': Key('ctrl-p d'),
+    '(numbers | numbered list)': Key('ctrl-p e'),
+    'viro menu': Key('ctrl-p space'),
+    'viro standard': Key('ctrl-p s'),
+    'viro lyx code': Key('ctrl-p c'),
+    'viro quotation': Key('ctrl-p shift-q'),
+    'viro quote': Key('ctrl-p q'),
+    'viro verse': Key('ctrl-p v'),
+    'viro verbatim': Key('ctrl-p shift-v'),
+    'viro part': Key('ctrl-p 0'),
+    'viro section': Key('ctrl-p 2'),
+    'viro subsection': Key('ctrl-p 3'),
+    'viro subsubsection': Key('ctrl-p 4'),
+    'viro paragraph': Key('ctrl-p 5'),
+    'viro subparagraph': Key('ctrl-p 6'),
+    'viro part star': Key('ctrl-p shift-8 0'),
+    'viro section star': Key('ctrl-p shift-8 2'),
+    'viro subsection star': Key('ctrl-p shift-8 3'),
+    'viro subsubsection star': Key('ctrl-p shift-8 4'),
+    'viro paragraph star': Key('ctrl-p shift-8 5'),
+    'viro subparagraph star': Key('ctrl-p shift-8 6'),
+    'viro title': Key('ctrl-p t'),
+    'viro author': Key('ctrl-p shift-a'),
+    'viro date': Key('ctrl-p shift-d'),
+    'viro abstract': Key('ctrl-p a'),
+    'viro address': Key('ctrl-p ctrl-a'),
+    'viro right address': Key('ctrl-p cmd-a'),
+    'viro bibliography': Key('ctrl-p shift-b'),
+    # font
+    'bold': Key('cmd-b'),
+    '(emphasis | emphasize| italics | italicize)': Key('cmd-e'),
+    'typewriter': Key('shift-cmd-p'),
+    'underline': Key('cmd-u'),
+    'noun': Key('ctrl-c c'),
+    # spacing
+    '(normal | interword) space': Key('alt-cmd-enter'),
+    'thin space': Key('alt-shift-space'),
+    'new column': Key('ctrl-m c i'),
+    'delete column': Key('ctrl-m c d'),
+    'copy column': Key('ctrl-m c c'),
+    'new row': Key('ctrl-m w i'),
+    'new line': Key('cmd-enter'),
+    'delete row': Key('ctrl-m w d'),
+    'copy row': Key('ctrl-m w c'),
+    'line break': Key('shift-cmd-enter'),
+    'protected break': Key('ctrl-enter'),
+    'protected space': Key('alt-space'),
+    # alignment
+    'align formula': Key('ctrl-m t a'),
+    'number formula': Key('ctrl-m n'),
+
+    # Math Symbols
+    'infinity': Key('ctrl-m 8'),
+    'dot': Key('ctrl-m ctrl-d'),  # p
+    '(times | multiplication)': Key('ctrl-m ctrl-b m'),  # p
+    'divided by': Key('ctrl-m ctrl-b d'),  # p
+    # big operators
+    '(sum | summation)': Key('ctrl-m u'),
+    # arrows
+    'double right arrow': Key('\\Rightarrow'),
+    'double left arrow': Str('\Leftarrow '),
+    'left arrow': Str('\leftarrow '),
+    'right arrow': Key('ctrl-m ctrl-shift->'),
+    'up arrow': Str('\\uparrow '),
+    'down arrow': Str('\downarrow '),
+    # decorations
+    'double dot': Key('ctrl-m "'),
+    'hat': Key('ctrl-m h'),
+    'grave': Key('ctrl-m \\'),
+    'acute': Key('ctrl-m /'),
+    'tilde': Key('ctrl-m &'),
+    'bar': Key('ctrl-m -'),
+    # 'dot': Key('ctrl-m .'),
+    'check': Key('ctrl-m shift-v'),
+    'breve': Key('ctrl-m shift-u'),
+    'vector': Key('ctrl-m v'),
+    'underbar': Key('ctrl-m _'),
+    'overline': Key('ctrl-m b'),
+    # relations
+    'not equal': Key('ctrl-m ='),
+    'plus or minus': Key('ctrl-m +'),
+    'leak': Str('\leq '),  # less than or equal to
+    'greek': Str('\geq '),  # greater than or equal to
+    'less less': Str('\ll '),
+    'greater greater': Str('\gg '),
+    # sets
+    'intersection': Str('\cap '),
+    'union': Str('\cup '),
+    'big intersection': Str('\\bigcap '),
+    'big intersection': Str('\\bigcup '),
+    'subset': Str('\subset '),
+    'superset': Str('\supset '),
+    'subset equal': Str('\subseteq '),
+    'superset equal': Str('\supseteq '),
+    # delimiters
+    'deli paren': Key('ctrl-m ('),
+    'deli square': Key('ctrl-m ['),
+    'deli curly': Key('ctrl-m {'),
+    # math classes
+    # algebra
+    'fraction': Key('ctrl-m f'),
+    'big fraction': Key('ctrl-m ctrl-shift-f'),  # p
+    'square root': Key('ctrl-m s'),
+    'logarithm': Key('ctrl-a ctrl-shift-n'),  # p
+    'natural log': Key('ctrl-a ctrl-n'),  # p
+    'graph': graphTemp,
+    'matrix': Key('ctrl-m ctrl-x'),  # p
+    # trig
+    'sine': Key('ctrl-m ctrl-t s'),  # p
+    'cosine': Key('ctrl-m ctrl-t c'),  # p
+    'tangent': Key('ctrl-m ctrl-t t'),  # p
+    'cosecant': Key('ctrl-m ctrl-t shift-s'),  # p
+    'secant': Key('ctrl-m ctrl-t shift-c'),  # p
+    'cotangent': Key('ctrl-m ctrl-t shift-t'),  # p
+    # calculus
+    # 'limit': Key('ctrl-m ctrl-c l'),
+    'limit': [Key('ctrl-m ctrl-c u'), Key('ctrl-m ctrl-c l'), Key('right'), Key('alt-cmd-enter'), Key('left'),
+              Key('left'), Key('down')],
+    'underset': Key('ctrl-m ctrl-c u'),
+    'prime': Key("ctrl-m '"),
+    'integral': Key('ctrl-m i'),
+    'solve bar': Key('ctrl-m ctrl-shift-l'),  # p
+    'partial [derivative]': Key('ctrl-m p'),
+    'line integral': Key('ctrl-m y'),
+
+    # Greek Symbols
+    # lowercase
+    '[little | small] alpha': Key('ctrl-m g a'),
+    '[little | small] beta': Key('ctrl-m g b'),
+    '[little | small] chi': Key('ctrl-m g c'),
+    '(little | small) delta': Key('ctrl-m g d'),
+    '[little | small] epsilon': Key('ctrl-m g e'),
+    'phi': Key('ctrl-m g f'),
+    'gamma': Key('ctrl-m g g'),
+    '[little | small] eta': Key('ctrl-m g h'),
+    '[little | small] iota': Key('ctrl-m g i'),
+    'varphi': Key('ctrl-m g j'),
+    '[little | small] kappa': Key('ctrl-m g k'),
+    'lambda': Key('ctrl-m g l'),
+    '[little | small] mu': Key('ctrl-m g m'),
+    '[little | small] nu': Key('ctrl-m g n'),
+    '(little | small) omega': Key('ctrl-m g o'),
+    'pi': Key('ctrl-m g p'),
+    'vartheta': Key('ctrl-m g q'),
+    '[little | small] rho': Key('ctrl-m g r'),
+    'sigma': Key('ctrl-m g s'),
+    '[little | small] tau': Key('ctrl-m g t'),
+    '[little | small] upsilon': Key('ctrl-m g u'),
+    'theta': Key('ctrl-m g v'),
+    '(little | small) xi': Key('ctrl-m g x'),
+    'psi': Key('ctrl-m g y'),
+    '[little | small] zeta': Key('ctrl-m g z'),
+    # uppercase
+    'delta': Key('ctrl-m g shift-d'),
+    'varepsilon': Key('ctrl-m g e'),
+    'big phi': Key('ctrl-m g shift-f'),
+    'big gamma': Key('ctrl-m g shift-g'),
+    'big lambda': Key('ctrl-m g shift-l'),
+    'big pi': Key('ctrl-m g shift-p'),
+    'big sigma': Key('ctrl-m g shift-s'),
+    'varsigma': Key('ctrl-m g shift-t'),
+    'big upsilon': Key('ctrl-m g shift-u'),
+    'big theta': Key('ctrl-m g shift-v'),
+    'big omega': Key('ctrl-m g shift-o'),
+    'big xi': Key('ctrl-m g shift-x'),
+    'big psi': Key('ctrl-m g shift-y'),
+})
