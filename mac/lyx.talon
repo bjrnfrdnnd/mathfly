@@ -225,13 +225,14 @@ insert address: key(alt-p alt-a)
 insert bibliography: key(alt-p shift-b)
 insert quotation: key(alt-p alt-q)
 insert quote: key(alt-p q)
-insert verse: tkey(alt-p v)
+insert verse: key(alt-p v)
 insert code: key(alt-p c)
 Insert typewriter: key(cmd-shift-p)
 insert unnumbered part: key(alt-p * 0)
 insert unnumbered (section | heading): key(alt-p * 2)
 insert unnumbered sub (section | heading): key(alt-p * 3)
 insert unnumbered sub sub (section | heading): key(alt-p * 4)
+insert citation: key(cmd-ctrl-c)
 
 
 
