@@ -16,7 +16,7 @@ greek {user.tex_greek_letters}:
     insert(tex_greek_letters)
     key(space)
 <number> {user.mathfly_fractions}:
-	key(alt-m f)
+	key(ctrl-m f)
 	insert(number)
 	key(down)
     insert(mathfly_fractions)
@@ -40,42 +40,42 @@ capital operator <user.letters>:
 #matrices are surrounded by square brackets
 #some edge cases
 matrix one by <number>:
-    key("alt-m [")
+    key("ctrl-m [")
     insert('\\array ')
-    key("alt-m c i")
+    key("ctrl-m c i")
     repeat(number-2)
 
 matrix <number> by one:
-    key("alt-m [")
+    key("ctrl-m [")
     insert('\\array ')
-    key("alt-m w i")
+    key("ctrl-m w i")
     repeat(number-2)
 
 matrix <number> by <number>:
-    key("alt-m [")
+    key("ctrl-m [")
  	insert("\\array ")
- 	key("alt-m w i")
+ 	key("ctrl-m w i")
  	repeat(number_1-2)
- 	key("alt-m c i")
+ 	key("ctrl-m c i")
      repeat(number_2-2)
 
 #commands to add lines in matrices     
 line above:
-    key("alt-m w a")
+    key("ctrl-m w a")
 line below:
-    key("alt-m w z")
+    key("ctrl-m w z")
     
 line right:
-    key("alt-m c z")
+    key("ctrl-m c z")
 line left:
-    key("alt-m c a")
+    key("ctrl-m c a")
 #matrix surrounded by pipes for cross product
 cross <number> by <number>:
-    key("alt-m |")
+    key("ctrl-m |")
  	insert("\\array ")
- 	key("alt-m w i")
+ 	key("ctrl-m w i")
  	repeat(number_1-2)
- 	key("alt-m c i")
+ 	key("ctrl-m c i")
      repeat(number_2-2)
 # commands to fill matrices with numbers/symbols, use with repetitions inside of a cell, "fill one third"
 dump <number>:
@@ -98,28 +98,28 @@ justify equal:
     insert("\overset =")
     key(up)
 
-fraction: key(alt-m f)
-over: key(shift-left alt-m f down)
+fraction: key(ctrl-m f)
+over: key(shift-left ctrl-m f down)
 (super script | to the power): key(^)
 sub script: key(_)
 squared: key(^ 2 right)
 cubed: key(^ 3 right)
 inverse: key(^ - 1 right)
-(prekris | parens | brackets | parents): key(alt-m ()
-(brax | square brackets): key(alt-m [)
-curly [brackets]: key(alt-m {)
-absolute: key(alt-m |)
-angles: key(alt-m <)
-add matrix row: key(alt-m w i)
-(delete | remove) matrix row: key(alt-m w d)
-add matrix column: key(alt-m c i)
-(delete | remove) matrix column: key(alt-m c d)
+(prekris | parens | brackets | parents): key(ctrl-m ()
+(brax | square brackets): key(ctrl-m [)
+curly [brackets]: key(ctrl-m {)
+absolute: key(ctrl-m |)
+angles: key(ctrl-m <)
+add matrix row: key(ctrl-m w i)
+(delete | remove) matrix row: key(ctrl-m w d)
+add matrix column: key(ctrl-m c i)
+(delete | remove) matrix column: key(ctrl-m c d)
 
-accent tilde: key(alt-m &)
-accent dot: key(alt-m .)
-accent double dot : key("alt-m \")
-accent bar: key(alt-m b)
-accent vector: key(alt-m v)
+accent tilde: key(ctrl-m &)
+accent dot: key(ctrl-m .)
+accent double dot : key("ctrl-m \")
+accent bar: key(ctrl-m b)
+accent vector: key(ctrl-m v)
 
 summation:
 	insert("\\stackrelthree ")
@@ -180,7 +180,7 @@ open file: key(cmd-o)
 save as: key(cmd-shift-s)
 math: key(cmd-m)
 display mode: key(cmd-shift-m)
-normal mode: key(alt-p s)
+normal mode: key(ctrl-p s)
 view PDF: key(cmd-t)
 update PDF: key(cmd-shift-r)
 next tab: key(cmd-pgdown)
@@ -232,7 +232,7 @@ insert unnumbered part: key(alt-p * 0)
 insert unnumbered (section | heading): key(alt-p * 2)
 insert unnumbered sub (section | heading): key(alt-p * 3)
 insert unnumbered sub sub (section | heading): key(alt-p * 4)
-insert citation: key(cmd-ctrl-c)
+insert citation: key(cmd-shift-c)
 
 
 
@@ -263,19 +263,19 @@ super (<user.letter>):
     insert(letter)
     edit.right()
 
-not equal: key(alt-m =)
+not equal: key(ctrl-m =)
 
 
 
 # zero [matrix | vector]:
-#     key(alt-m v)
+#     key(ctrl-m v)
 #     insert("0")
 #     edit.right()
 
 #cardinality of a set
 state cardinality <user.letter>:
     key(cmd-m)       
-    key(alt-m |)
+    key(ctrl-m |)
     insert(user.formatted_text(letter, "ALL_CAPS"))
     edit.right()
 
@@ -341,21 +341,21 @@ set compliment:
 
 multivariable limit:
     insert("\\lim _(x,y)\\rightarrow ")
-    key(alt-m ()
+    key(ctrl-m ()
 covariance:
     insert("\\textrm Cov")
     edit.right()
-    key(alt-m ()
+    key(ctrl-m ()
 variance:
     insert("\\textrm Var")
     edit.right()
-    key(alt-m ()
+    key(ctrl-m ()
 expectation:
     insert("\\textrm E")
     edit.right()
-    key(alt-m ()
+    key(ctrl-m ()
 correlation:
     insert("\\textrm Cor")
     edit.right()
-    key(alt-m ()
+    key(ctrl-m ()
 
