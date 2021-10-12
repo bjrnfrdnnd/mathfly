@@ -178,6 +178,7 @@ Polynomial Space:
 new file: key(cmd-n)
 open file: key(cmd-o)
 save as: key(cmd-shift-s)
+save: key(cmd-s)
 math: key(cmd-m)
 display mode: key(cmd-shift-m)
 normal mode: key(ctrl-p s)
@@ -190,7 +191,7 @@ move line up: key(cmd-ctrl-up)
 move line down: key(cmd-ctrl-down)
 #formatting
 insert (in line formula | in line): key(alt-i h i)
-insert (numbered formula): key(alt-i h n)
+insert (numbered formula): key(ctrl-cmd-n)
 insert (display formula | display): key(alt-i h d)
 insert equation array: key(alt-i h e)
 insert align: key(alt-i h a)
@@ -359,3 +360,5 @@ correlation:
     edit.right()
     key(ctrl-m ()
 
+zoom in: key(cmd-+)
+zoom out: key(cmd--)
